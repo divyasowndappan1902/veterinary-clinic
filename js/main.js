@@ -1,15 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sticky Header
+    // Initialize AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 50
+        });
+    }
+
+    // Sticky Header with Glassmorphism
     const header = document.querySelector('.main-header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-            header.style.padding = '15px 0';
-        } else {
-            header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
-            header.style.padding = '20px 0';
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
     // Mobile Menu Toggle (Enhanced)
     const mobileToggle = document.querySelector('.mobile-toggle');
@@ -33,18 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // FAQ Accordion
+    // FAQ Accordion (Smooth CSS transition based)
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
-            const body = header.nextElementSibling;
-            const isOpen = body.style.display === 'block';
+            const item = header.closest('.accordion-item');
+            const isOpen = item.classList.contains('active');
             
             // Close all
-            document.querySelectorAll('.accordion-body').forEach(b => b.style.display = 'none');
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+            });
             
             if (!isOpen) {
-                body.style.display = 'block';
+                item.classList.add('active');
             }
         });
     });
