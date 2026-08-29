@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Stackly</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="404.html" class="logo">
+                <img src="images/logo_0050.webp" alt="Stackly Logo">
+            </a>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action -->
+            <div class="header-action">
+                <a href="login.html" class="btn btn-highlighted">Login</a>
+                <button class="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+
+    <!-- Blog Section -->
+    <section class="blog-section" data-aos="fade-up" style="padding: 150px 0 100px;">
+        <div class="container">
+            <!-- Main Content -->
+            <div class="blog-main">
+                <div class="featured-article" style="padding: 0; border: 1px solid var(--divider-color); border-radius: 20px; overflow: hidden; background: var(--white-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 50px;">
+                    <img src="images/about-us-image.webp" alt="Featured" style="width: 100%; height: 700px; object-fit: cover; display: block;">
+                    <div style="padding: 40px;">
+                        <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase;">Pet Health</span>
+                        <h2 style="margin: 15px 0; font-size: 32px;" data-aos="fade-up">Top 10 Ways to Keep Your Pet Happy and Healthy</h2>
+                        <p style="margin-bottom: 25px; color: var(--text-color); font-size: 18px; line-height: 1.6;">Discover the best practices for ensuring your furry friend lives a long, joyful life, from balanced diets to regular exercise routines...</p>
+                        <a href="404.html" class="btn btn-outline" style="border: 1px solid var(--primary-color); color: var(--primary-color);">Read More</a>
+                    </div>
+                </div>
+
+                <style>
+                    .blog-card {
+                        border: 1px solid var(--divider-color);
+                        border-radius: 15px;
+                        overflow: hidden;
+                        background: var(--white-color);
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+                        transition: all 0.3s ease;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .blog-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    }
+                    .blog-card-img {
+                        width: 100%;
+                        height: 250px;
+                        object-fit: cover;
+                    }
+                    .blog-card-content {
+                        padding: 25px;
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .blog-card-content h3 {
+                        margin: 10px 0 15px 0;
+                        font-size: 20px;
+                        line-height: 1.4;
+                    }
+                </style>
+                <div class="category-header" style="margin: 60px 0 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--divider-color); padding-bottom: 10px;">
+                    <h2 style="font-size: 32px; color: var(--primary-color);" data-aos="fade-up">Recent Posts</h2>
+                </div>
+                <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/blog_training.webp" alt="Dog Training" onerror="this.src='https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2688&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Training</span>
+                            <h3>Basic Commands Every Dog Should Know</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/blog_wellness.webp" alt="Cat Wellness" onerror="this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2643&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Wellness</span>
+                            <h3>Understanding Your Cat's Body Language</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/grooming.webp" alt="Pet Grooming" onerror="this.src='https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=2671&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Grooming</span>
+                            <h3>Summer Grooming Tips for Long-Haired Pets</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pet Nutrition Section -->
+                <div class="category-header" style="margin: 60px 0 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--divider-color); padding-bottom: 10px;">
+                    <h2 style="font-size: 32px; color: var(--primary-color);" data-aos="fade-up">Pet Nutrition</h2>
+                    <a href="404.html" class="btn btn-outline" style="border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 20px;">View All</a>
+                </div>
+                <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/blog_nutrition.webp" alt="Puppy Nutrition" onerror="this.src='https://images.unsplash.com/photo-1589924691995-400dc9ecc119?q=80&w=2671&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Nutrition</span>
+                            <h3>Choosing the Right Food for Your Puppy</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/cat_nutrition.webp" alt="Cat Nutrition" onerror="this.src='https://images.unsplash.com/photo-1623366302587-bcaaddfcce35?q=80&w=2614&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Nutrition</span>
+                            <h3>Is Wet Food Better Than Dry Food for Cats?</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/senior_dog_diet.webp" alt="Senior Dog Diet" onerror="this.src='https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=2670&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Nutrition</span>
+                            <h3>Dietary Needs for Senior Dogs</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seasonal Pet Care Section -->
+                <div class="category-header" style="margin: 60px 0 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--divider-color); padding-bottom: 10px;">
+                    <h2 style="font-size: 32px; color: var(--primary-color);" data-aos="fade-up">Seasonal Pet Care</h2>
+                    <a href="404.html" class="btn btn-outline" style="border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 20px;">View All</a>
+                </div>
+                <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/winter_care.webp" alt="Winter Care" onerror="this.src='https://images.unsplash.com/photo-1548238128-48b4f2c0daee?q=80&w=2670&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Seasonal</span>
+                            <h3>Protecting Your Pet's Paws in Winter</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/summer_heat.webp" alt="Summer Heat" onerror="this.src='https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2574&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Seasonal</span>
+                            <h3>How to Keep Dogs Cool During Summer</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/spring_allergies.webp" alt="Spring Allergies" onerror="this.src='https://images.unsplash.com/photo-1537151608804-ea2f141444bb?q=80&w=2670&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Seasonal</span>
+                            <h3>Dealing with Spring Allergies in Pets</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pet Care Tips Section -->
+                <div class="category-header" style="margin: 60px 0 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--divider-color); padding-bottom: 10px;">
+                    <h2 style="font-size: 32px; color: var(--primary-color);" data-aos="fade-up">Pet Care Tips</h2>
+                    <a href="404.html" class="btn btn-outline" style="border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 20px;">View All</a>
+                </div>
+                <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/dental_care.webp" alt="Dental Care" onerror="this.src='https://images.unsplash.com/photo-1629897048514-3dd74142277d?q=80&w=2670&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Tips</span>
+                            <h3>The Importance of Pet Dental Hygiene</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/blog_behavior.webp" alt="Dog Behavior" onerror="this.src='https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2669&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Tips</span>
+                            <h3>How to Deal with Separation Anxiety in Dogs</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/blog_safety.webp" alt="Home Safety" onerror="this.src='https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?q=80&w=2670&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Tips</span>
+                            <h3>Pet-Proofing Your Home: A Beginner's Guide</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinic News & Updates Section -->
+                <div class="category-header" style="margin: 60px 0 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--divider-color); padding-bottom: 10px;">
+                    <h2 style="font-size: 32px; color: var(--primary-color);" data-aos="fade-up">Clinic News & Updates</h2>
+                    <a href="404.html" class="btn btn-outline" style="border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 20px;">View All</a>
+                </div>
+                <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/clinic_team.webp" alt="Clinic Team" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2668&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">News</span>
+                            <h3>Welcoming Dr. Smith to Our Veterinary Team!</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/new_equipment.webp" alt="New Equipment" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2653&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Updates</span>
+                            <h3>New State-of-the-Art Digital X-Ray Machine</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-aos="fade-up">
+                        <img class="blog-card-img" src="images/clinic_event.webp" alt="Clinic Event" onerror="this.src='https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2670&auto=format&fit=crop'">
+                        <div class="blog-card-content" data-aos="fade-up">
+                            <span style="color: var(--accent-color); font-size: 14px; font-weight: 600; text-transform: uppercase;">Events</span>
+                            <h3>Join Us for Free Dental Checkup Day</h3>
+                            <a href="404.html" class="btn btn-dark" style="margin-top: auto; padding: 10px 20px; border-radius: 8px; font-size: 14px; width: fit-content;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+<!-- Footer Start -->
+
+    <footer class="main-footer" style="background-color: var(--primary-color); color: var(--white-color); padding: 80px 0 20px;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 50px;">
+                <div class="footer-widget">
+                    <img src="images/logo_0050.webp" alt="Stackly Logo" style="margin-bottom: 20px; height: 40px;">
+                    <p style="color: rgba(255,255,255,0.7);">We provide top-notch veterinary services, focusing on the health, happiness, and well-being of your beloved pets.</p>
+                    <div class="social-links" style="display: flex; gap: 15px; margin-top: 25px;">
+                        <a href="404.html" style="background: rgba(255,255,255,0.1); color: var(--white-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition);" onmouseover="this.style.background='var(--accent-color)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html" style="background: rgba(255,255,255,0.1); color: var(--white-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition);" onmouseover="this.style.background='var(--accent-color)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html" style="background: rgba(255,255,255,0.1); color: var(--white-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition);" onmouseover="this.style.background='var(--accent-color)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" style="background: rgba(255,255,255,0.1); color: var(--white-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition);" onmouseover="this.style.background='var(--accent-color)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 style="color: var(--white-color); margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="color: rgba(255,255,255,0.7); line-height: 2;">
+                         <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About </a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 style="color: var(--white-color); margin-bottom: 20px;">Services</h3>
+                    <ul style="color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><a href="404.html">Health Checkups</a></li>
+                        <li><a href="404.html">Grooming</a></li>
+                        <li><a href="404.html">Vaccinations</a></li>
+                        <li><a href="404.html">Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 style="color: var(--white-color); margin-bottom: 20px;">Contact Info</h3>
+                    <ul style="color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--accent-color); margin-right: 10px;"></i> MMR Complex, TN 636008</li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> +(983) 456-789</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--accent-color); margin-right: 10px;"></i> info@Stackly.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top: 1px solid var(--dark-divider-color); padding-top: 20px; text-align: center; color: rgba(255,255,255,0.7);">
+                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

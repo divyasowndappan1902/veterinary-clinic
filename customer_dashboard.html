@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Stackly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo_0050.webp" alt="Stackly Logo">
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+    <li><a href="#" data-section="home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="#" data-section="mypets"><i class="fa-solid fa-paw"></i> My Pets</a></li>
+    <li><a href="#" data-section="appointments"><i class="fa-regular fa-calendar-check"></i> Appointments</a></li>
+    <li><a href="#" data-section="medicalrecords"><i class="fa-solid fa-file-medical"></i> Medical Records</a></li>
+    <li><a href="#" data-section="profile"><i class="fa-regular fa-user"></i> Profile</a></li>
+    <li><a href="#" data-section="settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+</ul>
+        </div>
+        <div class="sidebar-footer">
+            <a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar">
+            <div class="topbar-left" style="display: flex; align-items: center; gap: 15px;">
+                <button id="sidebar-toggle" class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                <div class="topbar-search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search records...">
+                </div>
+            </div>
+                        <div class="topbar-user">
+                <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                    <span id="dynamic-name">Sarah Jenkins</span>
+                    <span id="dynamic-email" style="font-size: 12px; color: var(--dash-muted); font-weight: 400;">sarah.j@email.com</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="dash-content">
+    <section id="section-home" class="dashboard-section active" data-aos="fade-up">
+        <div class="page-header" style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); padding: 40px; border-radius: 20px; color: var(--dash-secondary);">
+    <div>
+        <h1 style="margin-bottom: 10px;">Welcome back, Sarah!</h1>
+        <p style="margin: 0; font-size: 16px;">Here's an overview of your account and recent activity.</p>
+    </div>
+</div>
+
+<!-- Section 1: Quick Overview Stats -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">1. Quick Overview</h2>
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon primary">
+            <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="stat-info">
+            <h3>2</h3>
+            <p>Registered Pets</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon secondary">
+            <i class="fa-regular fa-calendar-check"></i>
+        </div>
+        <div class="stat-info">
+            <h3>1</h3>
+            <p>Upcoming Appointments</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon success">
+            <i class="fa-solid fa-pills"></i>
+        </div>
+        <div class="stat-info">
+            <h3>0</h3>
+            <p>Active Prescriptions</p>
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Quick Action Shortcuts -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">2. Quick Actions</h2>
+<div class="shortcuts-grid">
+    <a href="404.html" class="shortcut-card" onclick="document.querySelector('[data-section=\'appointments\']').click()">
+        <i class="fa-solid fa-calendar-plus"></i>
+        <span>Book Appointment</span>
+    </a>
+    <a href="404.html" class="shortcut-card" onclick="document.querySelector('[data-section=\'mypets\']').click()">
+        <i class="fa-solid fa-plus"></i>
+        <span>Register New Pet</span>
+    </a>
+    <a href="404.html" class="shortcut-card" onclick="document.querySelector('[data-section=\'medicalrecords\']').click()">
+        <i class="fa-solid fa-file-medical"></i>
+        <span>View Medical Records</span>
+    </a>
+</div>
+
+<!-- Section 3: Recent Activity Feed -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">3. Recent Activity</h2>
+<div class="table-card" style="padding: 30px;">
+    <div class="activity-feed">
+        <div class="activity-item">
+            <div class="activity-icon"><i class="fa-solid fa-file-arrow-up"></i></div>
+            <div class="activity-details">
+                <p><strong>Max's Annual Vaccination</strong> record was uploaded by Dr. Jane Smith.</p>
+                <span>2 hours ago</span>
+            </div>
+        </div>
+        <div class="activity-item">
+            <div class="activity-icon" style="background: rgba(40, 167, 69, 0.1); color: #28a745;"><i class="fa-regular fa-calendar-check"></i></div>
+            <div class="activity-details">
+                <p><strong>Dental Checkup</strong> appointment for Luna was confirmed.</p>
+                <span>Yesterday at 4:30 PM</span>
+            </div>
+        </div>
+        <div class="activity-item">
+            <div class="activity-icon" style="background: rgba(255, 123, 84, 0.1); color: var(--dash-primary);"><i class="fa-solid fa-paw"></i></div>
+            <div class="activity-details">
+                <p><strong>Luna</strong> was successfully registered to your account.</p>
+                <span>Oct 12, 2025</span>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+    <section id="section-mypets" class="dashboard-section" data-aos="fade-up" style="display: none;">
+        
+            <div class="page-header">
+                <div>
+                    <h1 style="margin-bottom: 10px;">My Pets</h1>
+                    <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Manage your furry friends, add new ones, and check their health reminders.</p>
+                </div>
+            </div>
+
+            <!-- Section 1: My Registered Pets -->
+            <h2 style="margin: 30px 0 20px;" data-aos="fade-up">1. My Registered Pets</h2>
+            <div class="pets-grid">
+                <div class="pet-card">
+                    <img src="images/about-us-image.webp" alt="Max">
+                    <div class="pet-card-body">
+                        <h3>Max</h3>
+                        <p>Golden Retriever â€¢ 3 Years Old</p>
+                        <a href="404.html" style="color: var(--dash-primary); font-weight: 600; text-decoration: none;">View Records</a>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="images/gallery-image-1.webp" alt="Luna">
+                    <div class="pet-card-body">
+                        <h3>Luna</h3>
+                        <p>Persian Cat â€¢ 2 Years Old</p>
+                        <a href="404.html" style="color: var(--dash-primary); font-weight: 600; text-decoration: none;">View Records</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Add a New Pet Form -->
+            <h2 style="margin: 40px 0 20px;" data-aos="fade-up">2. Add a New Pet</h2>
+            <div class="table-card" style="padding: 30px;">
+                <form class="pet-form">
+                    <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Pet Name</label>
+                            <input type="text" placeholder="e.g. Bella" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Species</label>
+                            <select style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; background: #fff; font-family: inherit;">
+                                <option>Dog</option>
+                                <option>Cat</option>
+                                <option>Bird</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Breed</label>
+                            <input type="text" placeholder="e.g. Bulldog" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Age (Years)</label>
+                            <input type="number" placeholder="e.g. 2" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+                        </div>
+                    </div>
+                    <button onclick="window.location.href='404.html'" type="button" class="btn-primary" style="border-radius: 8px; width: 100%; justify-content: center;"><i class="fa-solid fa-plus"></i> Register Pet</button>
+                </form>
+            </div>
+
+            <!-- Section 3: Upcoming Health Reminders -->
+            <h2 style="margin: 40px 0 20px;" data-aos="fade-up">3. Upcoming Health Reminders</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pet</th>
+                            <th>Reminder Type</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Max</strong></td>
+                            <td>Annual Vaccination</td>
+                            <td>Oct 25, 2026</td>
+                            <td><span class="status pending">Upcoming</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Luna</strong></td>
+                            <td>Dental Checkup</td>
+                            <td>Nov 12, 2026</td>
+                            <td><span class="status pending">Upcoming</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Max</strong></td>
+                            <td>Flea & Tick Prevention</td>
+                            <td>Oct 15, 2026</td>
+                            <td><span class="status confirmed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        
+    </section>
+    <section id="section-appointments" class="dashboard-section" data-aos="fade-up" style="display: none;">
+        <div class="page-header">
+    <div>
+        <h1 style="margin-bottom: 10px;">Appointments</h1>
+        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Manage your upcoming visits, book new appointments, and view history.</p>
+    </div>
+</div>
+
+<!-- Section 1: Upcoming Appointments -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">1. Upcoming Appointments</h2>
+<div class="appointments-grid">
+    <div class="appointment-card">
+        <div class="apt-header">
+            <span class="status pending">Upcoming</span>
+            <h4>Tomorrow</h4>
+        </div>
+        <div class="apt-body">
+            <h3>Max</h3>
+            <p><i class="fa-solid fa-syringe"></i> Annual Vaccination</p>
+            <p><i class="fa-regular fa-clock"></i> 10:00 AM - 10:30 AM</p>
+            <p><i class="fa-solid fa-user-doctor"></i> Dr. Jane Smith</p>
+        </div>
+        <div class="apt-footer">
+            <button onclick="window.location.href='404.html'" class="btn-outline">Reschedule</button>
+            <button onclick="window.location.href='404.html'" class="btn-outline" style="color: #dc3545; border-color: #dc3545;">Cancel</button>
+        </div>
+    </div>
+    <div class="appointment-card">
+        <div class="apt-header">
+            <span class="status pending">Upcoming</span>
+            <h4>Nov 12, 2026</h4>
+        </div>
+        <div class="apt-body">
+            <h3>Luna</h3>
+            <p><i class="fa-solid fa-tooth"></i> Dental Checkup</p>
+            <p><i class="fa-regular fa-clock"></i> 02:00 PM - 03:00 PM</p>
+            <p><i class="fa-solid fa-user-doctor"></i> Dr. Emily Chen</p>
+        </div>
+        <div class="apt-footer">
+            <button onclick="window.location.href='404.html'" class="btn-outline">Reschedule</button>
+            <button onclick="window.location.href='404.html'" class="btn-outline" style="color: #dc3545; border-color: #dc3545;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Book a New Appointment Form -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">2. Book a New Appointment</h2>
+<div class="table-card" style="padding: 30px;">
+    <form class="pet-form">
+        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Select Pet</label>
+                <select style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; background: #fff; font-family: inherit;">
+                    <option>Max</option>
+                    <option>Luna</option>
+                </select>
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Service Type</label>
+                <select style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; background: #fff; font-family: inherit;">
+                    <option>General Checkup</option>
+                    <option>Vaccination</option>
+                    <option>Dental Care</option>
+                    <option>Grooming</option>
+                    <option>Emergency</option>
+                </select>
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Preferred Date</label>
+                <input type="date" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Preferred Time</label>
+                <input type="time" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Additional Notes (Optional)</label>
+            <textarea placeholder="Let us know if your pet is experiencing any specific symptoms..." style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit; height: 100px; margin-bottom: 20px; resize: vertical;"></textarea>
+        </div>
+        <button onclick="window.location.href='404.html'" type="button" class="btn-primary" style="border-radius: 8px; width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Confirm Booking</button>
+    </form>
+</div>
+
+<!-- Section 3: Appointment History -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">3. Appointment History</h2>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Pet</th>
+                <th>Service</th>
+                <th>Doctor</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>May 14, 2026</td>
+                <td>Max</td>
+                <td>General Checkup</td>
+                <td>Dr. John Doe</td>
+                <td><span class="status confirmed">Completed</span></td>
+            </tr>
+            <tr>
+                <td>Oct 15, 2025</td>
+                <td>Max</td>
+                <td>Flea & Tick Prevention</td>
+                <td>Dr. Jane Smith</td>
+                <td><span class="status confirmed">Completed</span></td>
+            </tr>
+            <tr>
+                <td>Aug 02, 2025</td>
+                <td>Luna</td>
+                <td>Initial Consultation</td>
+                <td>Dr. Emily Chen</td>
+                <td><span class="status confirmed">Completed</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    </section>
+    <section id="section-medicalrecords" class="dashboard-section" data-aos="fade-up" style="display: none;">
+        <div class="page-header">
+    <div>
+        <h1 style="margin-bottom: 10px;">Medical Records</h1>
+        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Access prescriptions, vaccinations, and lab reports.</p>
+    </div>
+</div>
+
+<!-- Section 1: Active Prescriptions -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">1. Active Prescriptions</h2>
+<div class="prescriptions-grid">
+    <div class="prescription-card">
+        <div class="rx-icon">
+            <i class="fa-solid fa-pills"></i>
+        </div>
+        <div class="rx-details">
+            <h3>Heartgard Plus</h3>
+            <p class="rx-pet">For: <strong>Max</strong></p>
+            <p class="rx-dosage">Dosage: 1 chewable per month</p>
+            <p class="rx-doctor">Prescribed by: Dr. Jane Smith</p>
+        </div>
+        <div class="rx-action">
+            <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 10px 20px; font-size: 14px;"><i class="fa-solid fa-rotate-right"></i> Request Refill</button>
+        </div>
+    </div>
+    <div class="prescription-card">
+        <div class="rx-icon">
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+        </div>
+        <div class="rx-details">
+            <h3>Clavamox Drops</h3>
+            <p class="rx-pet">For: <strong>Luna</strong></p>
+            <p class="rx-dosage">Dosage: 1ml twice daily for 7 days</p>
+            <p class="rx-doctor">Prescribed by: Dr. Emily Chen</p>
+        </div>
+        <div class="rx-action">
+            <button class="btn-primary" style="padding: 10px 20px; font-size: 14px; background: #6c757d; border-color: #6c757d;" disabled><i class="fa-solid fa-check"></i> Refill Processing</button>
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Vaccination History -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">2. Vaccination History</h2>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Vaccine</th>
+                <th>Pet</th>
+                <th>Date Administered</th>
+                <th>Next Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Rabies (3-Year)</strong></td>
+                <td>Max</td>
+                <td>Oct 25, 2025</td>
+                <td>Oct 25, 2028</td>
+                <td><span class="status confirmed">Up to Date</span></td>
+            </tr>
+            <tr>
+                <td><strong>Bordetella</strong></td>
+                <td>Max</td>
+                <td>May 14, 2025</td>
+                <td>May 14, 2026</td>
+                <td><span class="status pending">Due Soon</span></td>
+            </tr>
+            <tr>
+                <td><strong>FVRCP</strong></td>
+                <td>Luna</td>
+                <td>Aug 02, 2025</td>
+                <td>Aug 02, 2026</td>
+                <td><span class="status confirmed">Up to Date</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Section 3: Lab Reports & Documents -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">3. Lab Reports & Documents</h2>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Record Date</th>
+                <th>Pet</th>
+                <th>Document Type</th>
+                <th>Veterinarian</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>May 14, 2026</td>
+                <td>Max</td>
+                <td>Visit Summary & Vitals</td>
+                <td>Dr. John Doe</td>
+                <td><a href="404.html" class="btn-primary" style="padding: 8px 15px; font-size: 14px;"><i class="fa-solid fa-download"></i> PDF</a></td>
+            </tr>
+            <tr>
+                <td>Nov 12, 2025</td>
+                <td>Luna</td>
+                <td>Dental X-Ray Results</td>
+                <td>Dr. Emily Chen</td>
+                <td><a href="404.html" class="btn-primary" style="padding: 8px 15px; font-size: 14px;"><i class="fa-solid fa-download"></i> PDF</a></td>
+            </tr>
+            <tr>
+                <td>Oct 25, 2025</td>
+                <td>Max</td>
+                <td>Annual Blood Panel</td>
+                <td>Dr. Jane Smith</td>
+                <td><a href="404.html" class="btn-primary" style="padding: 8px 15px; font-size: 14px;"><i class="fa-solid fa-download"></i> PDF</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    </section>
+    <section id="section-profile" class="dashboard-section" data-aos="fade-up" style="display: none;">
+        <div class="page-header">
+    <div>
+        <h1 style="margin-bottom: 10px;">My Profile</h1>
+        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Update your personal information, address, and emergency contacts.</p>
+    </div>
+</div>
+
+<!-- Section 1: Personal Information -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">1. Personal Information</h2>
+<div class="table-card" style="padding: 30px;">
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid var(--dash-border);">
+        <img src="images/author-2.webp" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+        <div>
+            <button onclick="window.location.href='404.html'" class="btn-outline" style="margin-bottom: 10px;"><i class="fa-solid fa-camera"></i> Change Photo</button>
+            <p style="margin: 0; font-size: 13px; color: var(--dash-muted);">JPG or PNG no larger than 5MB</p>
+        </div>
+    </div>
+    <form class="pet-form">
+        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">First Name</label>
+                <input type="text" value="Sarah" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Last Name</label>
+                <input type="text" value="Jenkins" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Email Address</label>
+                <input type="email" value="sarah.j@example.com" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Phone Number</label>
+                <input type="tel" value="(555) 123-4567" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+        </div>
+        <button onclick="window.location.href='404.html'" type="button" class="btn-primary" style="border-radius: 8px;"><i class="fa-solid fa-save"></i> Save Changes</button>
+    </form>
+</div>
+
+<!-- Section 2: Address & Billing -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">2. Address & Billing</h2>
+<div class="profile-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 25px;">
+    <div class="table-card" style="padding: 30px;">
+        <h3 style="margin-top: 0; margin-bottom: 20px; color: var(--dash-secondary);">Home Address</h3>
+        <form class="pet-form">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 600;">Street Address</label>
+                <input type="text" value="123 Maple Street, Apt 4B" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+            </div>
+            <div class="form-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                <div>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">City</label>
+                    <input type="text" value="Seattle" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">State</label>
+                    <input type="text" value="WA" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Zip Code</label>
+                    <input type="text" value="98101" style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; font-family: inherit;">
+                </div>
+            </div>
+            <button onclick="window.location.href='404.html'" type="button" class="btn-outline" style="border-radius: 8px;"><i class="fa-solid fa-location-dot"></i> Update Address</button>
+        </form>
+    </div>
+    
+    <div class="table-card" style="padding: 30px; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; margin-bottom: 20px; color: var(--dash-secondary);">Payment Method</h3>
+        <div style="background: linear-gradient(135deg, #2d4263 0%, #1a2639 100%); border-radius: 12px; padding: 20px; color: white; margin-bottom: 20px; flex-grow: 1; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <i class="fa-brands fa-cc-visa" style="font-size: 32px;"></i>
+                <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 4px;">Primary</span>
+            </div>
+            <p style="font-family: monospace; font-size: 18px; margin: 0 0 10px 0; letter-spacing: 2px;">**** **** **** 4242</p>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.7);">
+                <span id="dynamic-name">Sarah Jenkins</span>
+                <span>Exp: 12/28</span>
+            </div>
+        </div>
+        <button onclick="window.location.href='404.html'" class="btn-outline" style="width: 100%; justify-content: center;"><i class="fa-solid fa-credit-card"></i> Manage Billing</button>
+    </div>
+</div>
+
+<!-- Section 3: Emergency Contacts -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">3. Emergency Contacts</h2>
+<div class="table-card">
+    <div class="table-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0;">Authorized Contacts</h3>
+        <button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 8px 15px; font-size: 14px;"><i class="fa-solid fa-plus"></i> Add Contact</button>
+    </div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Relationship</th>
+                    <th>Phone Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mark Jenkins</strong></td>
+                    <td>Spouse</td>
+                    <td>(555) 987-6543</td>
+                    <td>
+                        <a href="404.html" style="color: var(--dash-primary); margin-right: 15px;"><i class="fa-solid fa-pen"></i></a>
+                        <a href="404.html" style="color: #dc3545;"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Emily Chen</strong></td>
+                    <td>Pet Sitter</td>
+                    <td>(555) 111-2222</td>
+                    <td>
+                        <a href="404.html" style="color: var(--dash-primary); margin-right: 15px;"><i class="fa-solid fa-pen"></i></a>
+                        <a href="404.html" style="color: #dc3545;"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    </section>
+    <section id="section-settings" class="dashboard-section" data-aos="fade-up" style="display: none;">
+        <div class="page-header">
+    <div>
+        <h1 style="margin-bottom: 10px;">Account Settings</h1>
+        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Manage your notification preferences, security, and account data.</p>
+    </div>
+</div>
+
+<!-- Section 1: Notification Preferences -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">1. Notification Preferences</h2>
+<div class="table-card" style="padding: 30px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--dash-border); margin-bottom: 20px;">
+        <div>
+            <h4 style="margin: 0 0 5px 0; color: var(--dash-secondary);">Appointment Reminders</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--dash-muted);">Receive SMS and Email reminders 24 hours before your visit.</p>
+        </div>
+        <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--dash-border); margin-bottom: 20px;">
+        <div>
+            <h4 style="margin: 0 0 5px 0; color: var(--dash-secondary);">Health & Vaccination Alerts</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--dash-muted);">Get notified when your pet is due for a checkup or vaccine.</p>
+        </div>
+        <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h4 style="margin: 0 0 5px 0; color: var(--dash-secondary);">Clinic News & Offers</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--dash-muted);">Occasional updates regarding holiday hours and special promotions.</p>
+        </div>
+        <label class="toggle-switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+</div>
+
+<!-- Section 2: Security & Privacy -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">2. Security & Privacy</h2>
+<div class="table-card" style="padding: 30px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; padding-bottom: 30px; border-bottom: 1px solid var(--dash-border); margin-bottom: 30px;">
+        <div>
+            <h4 style="margin: 0 0 10px 0; color: var(--dash-secondary);"><i class="fa-solid fa-shield-halved" style="color: #28a745; margin-right: 8px;"></i> Password Settings</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--dash-muted);">Last changed: 3 months ago</p>
+        </div>
+        <button onclick="window.location.href='404.html'" class="btn-outline"><i class="fa-solid fa-lock"></i> Update Password</button>
+    </div>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; padding-bottom: 30px; border-bottom: 1px solid var(--dash-border); margin-bottom: 30px;">
+        <div>
+            <h4 style="margin: 0 0 10px 0; color: var(--dash-secondary);">Two-Factor Authentication (2FA)</h4>
+            <p style="margin: 0; font-size: 14px; color: var(--dash-muted);">Add an extra layer of security to your account.</p>
+        </div>
+        <label class="toggle-switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div>
+        <h4 style="margin: 0 0 15px 0; color: var(--dash-secondary);">Recent Login Activity</h4>
+        <div style="background: rgba(45, 66, 99, 0.03); padding: 15px; border-radius: 8px; font-size: 14px; display: flex; justify-content: space-between;">
+            <div>
+                <strong>MacBook Pro - Safari</strong><br>
+                <span style="color: var(--dash-muted);">Seattle, WA • IP: 192.168.1.1</span>
+            </div>
+            <span style="color: #28a745; font-weight: 600;">Current Session</span>
+        </div>
+    </div>
+</div>
+
+<!-- Section 3: Account Preferences -->
+<h2 style="margin: 40px 0 20px;" data-aos="fade-up">3. Account Preferences</h2>
+<div class="table-card" style="padding: 30px;">
+    <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--dash-border);">
+        <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Display Language</label>
+            <select style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; background: #fff; font-family: inherit;">
+                <option>English (US)</option>
+                <option>Spanish (ES)</option>
+                <option>French (FR)</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Timezone</label>
+            <select style="width: 100%; padding: 12px; border: 1px solid var(--dash-border); border-radius: 8px; outline: none; background: #fff; font-family: inherit;">
+                <option>Pacific Time (PT)</option>
+                <option>Mountain Time (MT)</option>
+                <option>Central Time (CT)</option>
+                <option>Eastern Time (ET)</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <h4 style="margin: 0 0 10px 0; color: #dc3545;">Danger Zone</h4>
+        <p style="margin: 0 0 20px 0; font-size: 14px; color: var(--dash-muted);">Export your data or permanently delete your account. These actions cannot be easily undone.</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <button onclick="window.location.href='404.html'" class="btn-outline" style="border-color: var(--dash-secondary); color: var(--dash-secondary);"><i class="fa-solid fa-file-export"></i> Export All Data</button>
+            <button onclick="window.location.href='404.html'" class="btn-outline" style="border-color: #dc3545; color: #dc3545;"><i class="fa-solid fa-trash"></i> Deactivate Account</button>
+        </div>
+    </div>
+</div>
+    </section>
+</div>
+    </main>
+
+            <script>
+        // Load User Profile from Login
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+        
+        if (userName) document.getElementById('dynamic-name').textContent = userName;
+        if (userEmail) document.getElementById('dynamic-email').textContent = userEmail;
+        // Sidebar Mobile Toggle
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.querySelector('.dash-sidebar');
+        
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                sidebar.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 991) {
+                    const isClickInsideSidebar = sidebar.contains(event.target);
+                    const isClickOnToggle = sidebarToggle.contains(event.target);
+                    
+                    if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+            
+            sidebar.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        // SPA Navigation Logic
+        const navLinks = document.querySelectorAll('.sidebar-menu a');
+        const sections = document.querySelectorAll('.dashboard-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Get target section id
+                const targetId = 'section-' + this.getAttribute('data-section');
+                
+                // Hide all sections with fade out, then show target with fade in
+                sections.forEach(sec => {
+                    if (sec.id === targetId) {
+                        sec.style.display = 'block';
+                        // small delay to allow display block to apply before opacity transition
+                        setTimeout(() => { sec.style.opacity = '1'; }, 10);
+                    } else {
+                        sec.style.opacity = '0';
+                        setTimeout(() => { sec.style.display = 'none'; }, 300); // Wait for fade out
+                    }
+                });
+
+                // On mobile, close sidebar after clicking
+                if(window.innerWidth <= 991) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

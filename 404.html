@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Veterinary & Pet Care Clinic</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<!-- 404 Error Section Start -->
+    <section class="error-section" data-aos="fade-up" style="padding: 150px 0; text-align: center; background-color: var(--bg-color);">
+        <div class="container">
+                          <div class="animation-container" style="margin-bottom: 30px; display: flex; justify-content: center;">
+                  <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Paw Print -->
+                      <g fill="var(--primary-color)" opacity="0.2">
+                          <path d="M100,140 c-20,0-35-15-40-35 c-5-20,5-45,40-45 c35,0,45,25,40,45 C135,125,120,140,100,140z" />
+                          <circle cx="55" cy="80" r="16" />
+                          <circle cx="80" cy="55" r="18" />
+                          <circle cx="120" cy="55" r="18" />
+                          <circle cx="145" cy="80" r="16" />
+                      </g>
+                      
+                      <!-- Magnifying Glass with animation -->
+                      <g class="mag-glass" stroke="var(--secondary-color)" stroke-width="10" fill="none" stroke-linecap="round">
+                          <circle cx="80" cy="80" r="35" />
+                          <line x1="105" y1="105" x2="140" y2="140" />
+                      </g>
+                  </svg>
+                  <style>
+                      .mag-glass {
+                          animation: search 4s infinite ease-in-out;
+                          transform-origin: 100px 100px;
+                      }
+                      @keyframes search {
+                          0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+                          25% { transform: translate(-20px, 15px) rotate(-15deg) scale(1.1); }
+                          50% { transform: translate(25px, -15px) rotate(15deg) scale(1); }
+                          75% { transform: translate(15px, 25px) rotate(10deg) scale(1.1); }
+                          100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+                      }
+                  </style>
+              </div>
+                              <div class="text-3d-wrapper">
+                    <h1 class="text-3d">404</h1>
+                </div>
+                <style>
+                    .text-3d-wrapper {
+                        perspective: 1000px;
+                        margin-bottom: 20px;
+                        margin-top: -20px;
+                    }
+                    .text-3d {
+                        font-size: 180px;
+                        font-weight: 800;
+                        color: var(--primary-color); /* The coral color */
+                        margin: 0;
+                        line-height: 1;
+                        transform-style: preserve-3d;
+                        animation: float3d 5s ease-in-out infinite;
+                        text-shadow: 
+                            1px 1px 0px #e06c55,
+                            2px 2px 0px #d6644d,
+                            3px 3px 0px #cc5840,
+                            4px 4px 0px #b34a34,
+                            5px 5px 0px #993f2c,
+                            6px 6px 0px #803423,
+                            7px 7px 0px #66291c,
+                            8px 8px 0px #4d1f15,
+                            10px 20px 20px rgba(0,0,0,0.3);
+                    }
+                    @keyframes float3d {
+                        0%, 100% {
+                            transform: rotateX(15deg) rotateY(-15deg) translateZ(0);
+                        }
+                        50% {
+                            transform: rotateX(-5deg) rotateY(15deg) translateZ(30px);
+                        }
+                    }
+                </style>
+            <h2 style="font-size: 40px; color: var(--secondary-color); margin-bottom: 20px;" data-aos="fade-up">Page Not Found</h2>
+            <p style="font-size: 18px; color: var(--text-color); max-width: 600px; margin: 0 auto 40px;">Oops! The page you are looking for doesn't exist, has been moved, or is temporarily unavailable.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="#" onclick="history.back(); return false;" class="btn btn-outline" style="padding: 15px 30px; font-size: 18px; border: 1px solid var(--primary-color); color: var(--primary-color);"><i class="fa-solid fa-arrow-left" style="margin-right: 10px;"></i> Go Back</a>
+                <a href="index.html" class="btn btn-primary" style="padding: 15px 30px; font-size: 18px;"><i class="fa-solid fa-house" style="margin-right: 10px;"></i> Back to Home</a>
+            </div>
+        </div>
+    </section>
+    <!-- 404 Error Section End -->
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
+
+
+
+

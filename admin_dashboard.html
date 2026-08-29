@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Stackly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo_0050.webp" alt="Stackly Logo">
+        </div>
+        <div class="sidebar-menu">
+                        <ul>
+                <li><a href="#" class="active" data-section="overview"><i class="fa-solid fa-chart-pie"></i> Overview</a></li>
+                <li><a href="#" data-section="appointments"><i class="fa-regular fa-calendar-check"></i> Appointments</a></li>
+                <li><a href="#" data-section="customers"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="#" data-section="veterinarians"><i class="fa-solid fa-stethoscope"></i> Veterinarians</a></li>
+                <li><a href="#" data-section="reports"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar">
+            <div class="topbar-left" style="display: flex; align-items: center; gap: 15px;">
+                <button id="sidebar-toggle" class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="topbar-search">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Search patients, doctors...">
+            </div>
+                        <div class="topbar-user">
+                <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                    <span id="dynamic-name">Dr. John Doe</span>
+                    <span id="dynamic-email" style="font-size: 12px; color: var(--dash-muted); font-weight: 400;">admin@stacklyvet.com</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+                <div class="dash-content">
+            <!-- SECTION: OVERVIEW -->
+            <section id="section-overview" class="dashboard-section active" data-aos="fade-up">
+                <div class="page-header">
+                    <h1>Dashboard Overview</h1>
+                    <a href="404.html" class="btn-primary"><i class="fa-solid fa-plus"></i> New Appointment</a>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1,248</h3>
+                            <p>Total Patients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon secondary">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>42</h3>
+                            <p>Appointments Today</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>,450</h3>
+                            <p>Weekly Revenue</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="table-header">
+                        <h3>Recent Appointments</h3>
+                        <a href="404.html" style="color: var(--dash-primary); font-weight: 600; text-decoration: none;">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pet Name</th>
+                                    <th>Owner</th>
+                                    <th>Date & Time</th>
+                                    <th>Doctor</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Max (Golden Retriever)</strong></td>
+                                    <td>Sarah Jenkins</td>
+                                    <td>Oct 24, 2026 - 10:00 AM</td>
+                                    <td>Dr. Jane Smith</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bella (Siamese Cat)</strong></td>
+                                    <td>Michael Brown</td>
+                                    <td>Oct 24, 2026 - 11:30 AM</td>
+                                    <td>Dr. Sarah Lee</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Charlie (Beagle)</strong></td>
+                                    <td>Emily Davis</td>
+                                    <td>Oct 24, 2026 - 01:00 PM</td>
+                                    <td>Dr. John Doe</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Luna (Husky)</strong></td>
+                                    <td>David Wilson</td>
+                                    <td>Oct 25, 2026 - 09:00 AM</td>
+                                    <td>Dr. Jane Smith</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="profile-grid" style="margin-top: 30px;">
+                    <!-- Section 1: Clinic Capacity & Status -->
+                    <div class="table-card" style="padding: 30px;">
+                        <h3 style="margin-top: 0; margin-bottom: 25px; color: var(--dash-secondary);"><i class="fa-solid fa-hospital" style="color: var(--dash-primary); margin-right: 10px;"></i>Clinic Capacity & Status</h3>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; font-weight: 500;">
+                                <span>Waiting Room</span>
+                                <span>12 / 15</span>
+                            </div>
+                            <div style="height: 10px; background: rgba(0,0,0,0.05); border-radius: 5px; overflow: hidden;">
+                                <div style="height: 100%; width: 80%; background: #dc3545;"></div>
+                            </div>
+                            <p style="margin: 5px 0 0 0; font-size: 12px; color: #dc3545;"><i class="fa-solid fa-triangle-exclamation"></i> Near Capacity</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; font-weight: 500;">
+                                <span>Kennel Occupancy</span>
+                                <span>8 / 20</span>
+                            </div>
+                            <div style="height: 10px; background: rgba(0,0,0,0.05); border-radius: 5px; overflow: hidden;">
+                                <div style="height: 100%; width: 40%; background: #28a745;"></div>
+                            </div>
+                        </div>
+
+                        <div style="padding-top: 20px; border-top: 1px solid var(--dash-border);">
+                            <h4 style="margin: 0 0 15px 0; color: var(--dash-secondary);">Available Emergency Staff</h4>
+                            <div style="display: flex; gap: 15px;">
+                                <img src="images/author-1.webp" alt="Dr. John" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #28a745;" title="Dr. John Doe - Available">
+                                <img src="images/author-2.webp" alt="Dr. Jane" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #28a745;" title="Dr. Jane Smith - Available">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Recent Staff Activity -->
+                    <div class="table-card" style="padding: 30px;">
+                        <h3 style="margin-top: 0; margin-bottom: 25px; color: var(--dash-secondary);"><i class="fa-solid fa-clipboard-list" style="color: var(--dash-primary); margin-right: 10px;"></i>Recent Staff Activity</h3>
+                        
+                        <div style="position: relative; padding-left: 20px; border-left: 2px solid var(--dash-border);">
+                            
+                            <div style="margin-bottom: 20px; position: relative;">
+                                <div style="position: absolute; left: -27px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--dash-primary); border: 3px solid #fff;"></div>
+                                <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);"><strong>Dr. Jane Smith</strong> checked in patient <strong>Max</strong> for General Checkup.</p>
+                                <span style="font-size: 12px; color: var(--dash-muted);">10 mins ago</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px; position: relative;">
+                                <div style="position: absolute; left: -27px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: #28a745; border: 3px solid #fff;"></div>
+                                <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);">New customer <strong>Sarah Jenkins</strong> successfully registered.</p>
+                                <span style="font-size: 12px; color: var(--dash-muted);">45 mins ago</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px; position: relative;">
+                                <div style="position: absolute; left: -27px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--dash-secondary); border: 3px solid #fff;"></div>
+                                <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);"><strong>Dr. John Doe</strong> completed Surgery on patient <strong>Bella</strong>.</p>
+                                <span style="font-size: 12px; color: var(--dash-muted);">2 hours ago</span>
+                            </div>
+
+                            <div style="position: relative;">
+                                <div style="position: absolute; left: -27px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: #dc3545; border: 3px solid #fff;"></div>
+                                <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);"><strong>Inventory Alert:</strong> Rabies vaccine stock is running low (5 remaining).</p>
+                                <span style="font-size: 12px; color: var(--dash-muted);">3 hours ago</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: APPOINTMENTS -->
+            <section id="section-appointments" class="dashboard-section" data-aos="fade-up" style="display: none;">
+                <div class="page-header">
+                    <div>
+                        <h1 style="margin-bottom: 10px;">Appointments</h1>
+                        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Manage and view all upcoming appointments.</p>
+                    </div>
+                    <a href="404.html" class="btn-primary"><i class="fa-solid fa-plus"></i> Create Appointment</a>
+                </div>
+                <div class="profile-grid" style="margin-top: 30px;">
+                    <!-- Section 1: Pending Appointment Requests -->
+                    <div class="table-card" style="padding: 30px; background: rgba(255, 123, 84, 0.03); border: 1px solid rgba(255, 123, 84, 0.2);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                            <h3 style="margin: 0; color: var(--dash-secondary);"><i class="fa-solid fa-inbox" style="color: var(--dash-primary); margin-right: 10px;"></i>Pending Requests (2)</h3>
+                        </div>
+                        
+                        <!-- Request Card 1 -->
+                        <div style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--dash-border); box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0;">Daisy (Poodle)</h4>
+                                    <p style="margin: 0; font-size: 13px; color: var(--dash-muted);">Owner: Emily Davis</p>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="background: rgba(255, 123, 84, 0.1); color: var(--dash-primary); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;">Dental Cleaning</span>
+                                </div>
+                            </div>
+                            <p style="margin: 0 0 15px 0; font-size: 14px; color: var(--dash-text);"><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> Requested: Tomorrow at 2:00 PM</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button onclick="window.location.href='404.html'" class="btn-primary" style="flex: 1; padding: 8px; font-size: 13px; background: #28a745; border-color: #28a745;"><i class="fa-solid fa-check"></i> Approve</button>
+                                <button onclick="window.location.href='404.html'" class="btn-outline" style="flex: 1; padding: 8px; font-size: 13px; border-color: #dc3545; color: #dc3545;"><i class="fa-solid fa-xmark"></i> Decline</button>
+                            </div>
+                        </div>
+
+                        <!-- Request Card 2 -->
+                        <div style="background: #fff; padding: 20px; border-radius: 12px; border: 1px solid var(--dash-border); box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0;">Rocky (Bulldog)</h4>
+                                    <p style="margin: 0; font-size: 13px; color: var(--dash-muted);">Owner: Chris Taylor</p>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="background: rgba(255, 123, 84, 0.1); color: var(--dash-primary); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;">Vaccination</span>
+                                </div>
+                            </div>
+                            <p style="margin: 0 0 15px 0; font-size: 14px; color: var(--dash-text);"><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> Requested: Friday at 10:30 AM</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button onclick="window.location.href='404.html'" class="btn-primary" style="flex: 1; padding: 8px; font-size: 13px; background: #28a745; border-color: #28a745;"><i class="fa-solid fa-check"></i> Approve</button>
+                                <button onclick="window.location.href='404.html'" class="btn-outline" style="flex: 1; padding: 8px; font-size: 13px; border-color: #dc3545; color: #dc3545;"><i class="fa-solid fa-xmark"></i> Decline</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Daily Schedule Overview -->
+                    <div class="table-card" style="padding: 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                            <h3 style="margin: 0; color: var(--dash-secondary);"><i class="fa-regular fa-calendar-days" style="color: var(--dash-primary); margin-right: 10px;"></i>Today's Schedule</h3>
+                            <span style="font-size: 14px; color: var(--dash-muted); font-weight: 500;">Oct 24, 2026</span>
+                        </div>
+                        
+                        <!-- Dr. Jane Smith Schedule -->
+                        <div style="margin-bottom: 25px;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                                <img src="images/author-2.webp" alt="Dr. Jane Smith" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+                                <h4 style="margin: 0;">Dr. Jane Smith</h4>
+                            </div>
+                            <div style="padding-left: 15px; border-left: 2px solid var(--dash-primary);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;">
+                                    <span><strong style="color: var(--dash-primary);">10:00 AM</strong> - Max (Golden Retriever)</span>
+                                    <span style="color: #28a745; font-size: 12px; font-weight: 600;"><i class="fa-solid fa-circle" style="font-size: 8px; margin-right: 4px;"></i>In Progress</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 14px; color: var(--dash-muted);">
+                                    <span><strong style="color: var(--dash-text);">11:00 AM</strong> - Buster (Beagle)</span>
+                                    <span style="font-size: 12px;">Waiting Room</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dr. Sarah Lee Schedule -->
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                                <img src="images/author-3.webp" alt="Dr. Sarah Lee" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+                                <h4 style="margin: 0;">Dr. Sarah Lee</h4>
+                            </div>
+                            <div style="padding-left: 15px; border-left: 2px solid var(--dash-primary);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; color: var(--dash-muted);">
+                                    <span><strong style="color: var(--dash-text);">11:30 AM</strong> - Bella (Siamese)</span>
+                                    <span style="font-size: 12px;">Waiting Room</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 14px; color: var(--dash-muted);">
+                                    <span><strong style="color: var(--dash-text);">01:30 PM</strong> - Whiskers (Tabby)</span>
+                                    <span style="font-size: 12px;">Not Arrived</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="table-card" style="margin-top: 30px;">
+                    <div class="table-header">
+                        <h3>All Appointments</h3>
+                        <div class="topbar-search" style="margin-bottom: 0;">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" placeholder="Search by name, date...">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pet Name</th>
+                                    <th>Customer</th>
+                                    <th>Date & Time</th>
+                                    <th>Veterinarian</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Max</strong> (Golden Retriever)</td>
+                                    <td>Sarah Jenkins</td>
+                                    <td>Oct 24, 2026 - 10:00 AM</td>
+                                    <td>Dr. Jane Smith</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                    <td>
+                                        <a href="404.html" style="color: var(--dash-primary); margin-right: 15px;"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="404.html" style="color: #dc3545;"><i class="fa-solid fa-ban"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bella</strong> (Siamese Cat)</td>
+                                    <td>Michael Brown</td>
+                                    <td>Oct 24, 2026 - 11:30 AM</td>
+                                    <td>Dr. Sarah Lee</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>
+                                        <a href="404.html" style="color: var(--dash-primary); margin-right: 15px;"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="404.html" style="color: #dc3545;"><i class="fa-solid fa-ban"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Charlie</strong> (Beagle)</td>
+                                    <td>Emily Davis</td>
+                                    <td>Oct 24, 2026 - 01:00 PM</td>
+                                    <td>Dr. John Doe</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                    <td>
+                                        <a href="404.html" style="color: var(--dash-primary); margin-right: 15px;"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="404.html" style="color: #dc3545;"><i class="fa-solid fa-ban"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: CUSTOMERS -->
+            <section id="section-customers" class="dashboard-section" data-aos="fade-up" style="display: none;">
+                <div class="page-header">
+                    <div>
+                        <h1 style="margin-bottom: 10px;">Customers</h1>
+                        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Manage your customer directory and their pets.</p>
+                    </div>
+                    <a href="404.html" class="btn-primary"><i class="fa-solid fa-user-plus"></i> Add Customer</a>
+                </div>
+                <div class="profile-grid" style="margin-top: 30px;">
+                    <!-- Section 1: VIP Customers -->
+                    <div class="table-card" style="padding: 30px;">
+                        <h3 style="margin-top: 0; margin-bottom: 25px; color: var(--dash-secondary);"><i class="fa-solid fa-crown" style="color: #f1c40f; margin-right: 10px;"></i>Top VIP Customers</h3>
+                        
+                        <div style="background: linear-gradient(135deg, rgba(45,66,99,0.05) 0%, rgba(45,66,99,0) 100%); border: 1px solid var(--dash-border); padding: 15px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <img src="images/author-2.webp" alt="Emily Davis" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                                <div>
+                                    <h4 style="margin: 0 0 3px 0;">Emily Davis</h4>
+                                    <span style="font-size: 12px; color: var(--dash-muted);">Member since 2018 ? 3 Pets</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <h4 style="margin: 0; color: var(--dash-primary);">27 Visits</h4>
+                                <span style="background: rgba(241, 196, 15, 0.2); color: #d4ac0d; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: bold; text-transform: uppercase;">Platinum</span>
+                            </div>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, rgba(45,66,99,0.05) 0%, rgba(45,66,99,0) 100%); border: 1px solid var(--dash-border); padding: 15px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <img src="images/author-3.webp" alt="Sarah Jenkins" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                                <div>
+                                    <h4 style="margin: 0 0 3px 0;">Sarah Jenkins</h4>
+                                    <span style="font-size: 12px; color: var(--dash-muted);">Member since 2020 ? 2 Pets</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <h4 style="margin: 0; color: var(--dash-primary);">14 Visits</h4>
+                                <span style="background: rgba(241, 196, 15, 0.2); color: #d4ac0d; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: bold; text-transform: uppercase;">Gold</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Recent Feedback -->
+                    <div class="table-card" style="padding: 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                            <h3 style="margin: 0; color: var(--dash-secondary);"><i class="fa-solid fa-comment-dots" style="color: var(--dash-primary); margin-right: 10px;"></i>Recent Feedback</h3>
+                            <span style="font-size: 14px; color: var(--dash-primary); font-weight: 500; cursor: pointer;">View All</span>
+                        </div>
+
+                        <div style="border-bottom: 1px solid var(--dash-border); padding-bottom: 15px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                <strong style="font-size: 14px;">Michael Brown</strong>
+                                <span style="color: #f1c40f; font-size: 12px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                            </div>
+                            <p style="margin: 0 0 10px 0; font-size: 13px; color: var(--dash-text); font-style: italic;">"Dr. Lee was absolutely amazing with Luna! The checkup was fast and stress-free."</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 11px; color: var(--dash-muted);">2 hours ago</span>
+                                <button onclick="window.location.href='404.html'" style="background: none; border: none; color: var(--dash-primary); font-size: 12px; font-weight: 600; cursor: pointer; padding: 0;">Reply</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                <strong style="font-size: 14px;">David Wilson</strong>
+                                <span style="color: #f1c40f; font-size: 12px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                            </div>
+                            <p style="margin: 0 0 10px 0; font-size: 13px; color: var(--dash-text); font-style: italic;">"Great service, but the waiting room was a bit crowded today."</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 11px; color: var(--dash-muted);">Yesterday</span>
+                                <button onclick="window.location.href='404.html'" style="background: none; border: none; color: var(--dash-primary); font-size: 12px; font-weight: 600; cursor: pointer; padding: 0;">Follow Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-card" style="margin-top: 30px;">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <th>Contact Information</th>
+                                    <th>Registered Pets</th>
+                                    <th>Total Visits</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sarah Jenkins</strong></td>
+                                    <td>sarah.j@example.com<br><span style="color: var(--dash-muted); font-size: 13px;">(555) 123-4567</span></td>
+                                    <td>2 (Max, Bella)</td>
+                                    <td>14</td>
+                                    <td>
+                                        <button onclick="window.location.href='404.html'" class="btn-outline" style="padding: 5px 10px; font-size: 12px;">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Michael Brown</strong></td>
+                                    <td>m.brown@example.com<br><span style="color: var(--dash-muted); font-size: 13px;">(555) 987-6543</span></td>
+                                    <td>1 (Luna)</td>
+                                    <td>3</td>
+                                    <td>
+                                        <button onclick="window.location.href='404.html'" class="btn-outline" style="padding: 5px 10px; font-size: 12px;">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Emily Davis</strong></td>
+                                    <td>emily.d@example.com<br><span style="color: var(--dash-muted); font-size: 13px;">(555) 222-3333</span></td>
+                                    <td>3 (Charlie, Daisy, Milo)</td>
+                                    <td>27</td>
+                                    <td>
+                                        <button onclick="window.location.href='404.html'" class="btn-outline" style="padding: 5px 10px; font-size: 12px;">View Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: VETERINARIANS -->
+            <section id="section-veterinarians" class="dashboard-section" data-aos="fade-up" style="display: none;">
+                <div class="page-header">
+                    <div>
+                        <h1 style="margin-bottom: 10px;">Veterinarians</h1>
+                        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Manage clinic staff and schedules.</p>
+                    </div>
+                    <a href="404.html" class="btn-primary"><i class="fa-solid fa-user-doctor"></i> Add Doctor</a>
+                </div>
+                
+                <div class="prescriptions-grid" style="margin-top: 30px;">
+                    <!-- Vet Card 1 -->
+                    <div class="prescription-card" style="align-items: center; text-align: center;">
+                        <img src="images/author-1.webp" alt="Dr. John Doe" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                        <h3 style="margin: 0 0 5px 0; color: var(--dash-secondary);">Dr. John Doe</h3>
+                        <p style="margin: 0 0 15px 0; color: var(--dash-primary); font-weight: 500;">Head of Surgery</p>
+                        <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);">15 Years Experience</p>
+                        <p style="margin: 0 0 20px 0; font-size: 14px; color: #28a745; font-weight: 600;"><i class="fa-solid fa-circle" style="font-size: 8px; margin-right: 5px;"></i> Available Today</p>
+                        <button onclick="window.location.href='404.html'" class="btn-outline" style="width: 100%; justify-content: center;">View Schedule</button>
+                    </div>
+                    <!-- Vet Card 2 -->
+                    <div class="prescription-card" style="align-items: center; text-align: center;">
+                        <img src="images/author-2.webp" alt="Dr. Jane Smith" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                        <h3 style="margin: 0 0 5px 0; color: var(--dash-secondary);">Dr. Jane Smith</h3>
+                        <p style="margin: 0 0 15px 0; color: var(--dash-primary); font-weight: 500;">General Practice</p>
+                        <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);">8 Years Experience</p>
+                        <p style="margin: 0 0 20px 0; font-size: 14px; color: #28a745; font-weight: 600;"><i class="fa-solid fa-circle" style="font-size: 8px; margin-right: 5px;"></i> Available Today</p>
+                        <button onclick="window.location.href='404.html'" class="btn-outline" style="width: 100%; justify-content: center;">View Schedule</button>
+                    </div>
+                    <!-- Vet Card 3 -->
+                    <div class="prescription-card" style="align-items: center; text-align: center;">
+                        <img src="images/author-3.webp" alt="Dr. Sarah Lee" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                        <h3 style="margin: 0 0 5px 0; color: var(--dash-secondary);">Dr. Sarah Lee</h3>
+                        <p style="margin: 0 0 15px 0; color: var(--dash-primary); font-weight: 500;">Feline Specialist</p>
+                        <p style="margin: 0 0 5px 0; font-size: 14px; color: var(--dash-text);">12 Years Experience</p>
+                        <p style="margin: 0 0 20px 0; font-size: 14px; color: #dc3545; font-weight: 600;"><i class="fa-solid fa-circle" style="font-size: 8px; margin-right: 5px;"></i> Off Duty</p>
+                        <button onclick="window.location.href='404.html'" class="btn-outline" style="width: 100%; justify-content: center;">View Schedule</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: REPORTS -->
+            <section id="section-reports" class="dashboard-section" data-aos="fade-up" style="display: none;">
+                <div class="page-header">
+                    <div>
+                        <h1 style="margin-bottom: 10px;">Reports & Analytics</h1>
+                        <p style="margin: 0; font-size: 16px; color: var(--dash-muted);">Track clinic performance and growth.</p>
+                    </div>
+                    <button onclick="window.location.href='404.html'" class="btn-outline"><i class="fa-solid fa-download"></i> Export Data</button>
+                </div>
+                
+                <div class="stats-grid" style="margin-top: 30px;">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>+15%</h3>
+                            <p>Monthly Growth</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>142</h3>
+                            <p>New Customers (MTD)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon secondary">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4.9</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-grid" style="margin-top: 30px;">
+                    <div class="table-card" style="padding: 30px;">
+                        <h3 style="margin-top: 0; margin-bottom: 20px; color: var(--dash-secondary);">Monthly Revenue Overview</h3>
+                        <div style="height: 250px; background: rgba(0,0,0,0.02); border-radius: 12px; display: flex; align-items: flex-end; justify-content: space-around; padding: 20px;">
+                            <div style="width: 40px; background: var(--dash-primary); height: 40%; border-radius: 6px 6px 0 0;"></div>
+                            <div style="width: 40px; background: var(--dash-primary); height: 60%; border-radius: 6px 6px 0 0;"></div>
+                            <div style="width: 40px; background: var(--dash-primary); height: 45%; border-radius: 6px 6px 0 0;"></div>
+                            <div style="width: 40px; background: var(--dash-primary); height: 80%; border-radius: 6px 6px 0 0;"></div>
+                            <div style="width: 40px; background: var(--dash-primary); height: 75%; border-radius: 6px 6px 0 0;"></div>
+                            <div style="width: 40px; background: var(--dash-primary); height: 95%; border-radius: 6px 6px 0 0;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-around; margin-top: 10px; font-size: 12px; color: var(--dash-muted);">
+                            <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span>
+                        </div>
+                    </div>
+                    <div class="table-card" style="padding: 30px;">
+                        <h3 style="margin-top: 0; margin-bottom: 20px; color: var(--dash-secondary);">Appointments by Type</h3>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 14px;">
+                                <span>General Checkup</span><span>45%</span>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 45%; background: var(--dash-primary);"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 14px;">
+                                <span>Vaccinations</span><span>30%</span>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 30%; background: #28a745;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 14px;">
+                                <span>Surgery</span><span>15%</span>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 15%; background: var(--dash-secondary);"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 14px;">
+                                <span>Emergency</span><span>10%</span>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 10%; background: #dc3545;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+        <script>
+        // Load User Profile from Login
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+        
+        if (userName) document.getElementById('dynamic-name').textContent = userName;
+        if (userEmail) document.getElementById('dynamic-email').textContent = userEmail;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar Toggle Logic
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.querySelector('.dash-sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    sidebar.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (window.innerWidth <= 991) {
+                        const isClickInsideSidebar = sidebar.contains(event.target);
+                        const isClickOnToggle = sidebarToggle.contains(event.target);
+                        
+                        if (!isClickInsideSidebar && !isClickOnToggle && sidebar.classList.contains('active')) {
+                            sidebar.classList.remove('active');
+                        }
+                    }
+                });
+                
+                // Prevent clicks inside sidebar from closing it
+                sidebar.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a[data-section]');
+            const sections = document.querySelectorAll('.dashboard-section');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const targetId = 'section-' + this.getAttribute('data-section');
+                    
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.style.display = 'block';
+                            section.style.opacity = '0';
+                            // Trigger reflow
+                            void section.offsetWidth;
+                            section.style.transition = 'opacity 0.3s ease';
+                            section.style.opacity = '1';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Stackly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="login-page">
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-image-section">
+                <div class="overlay-text">
+                    <h2 data-aos="fade-up">Welcome Back!</h2>
+                    <p>We've missed you and your furry friend. Log in to manage appointments, view records, and discover top-tier care.</p>
+                </div>
+            </div>
+            
+            <div class="login-form-section">
+                <div class="login-header">
+                    <img src="images/logo_0050.webp" alt="Stackly Logo" class="login-logo">
+                    <h3>Sign In to Stackly</h3>
+                    <p>Enter your details to access your account.</p>
+                </div>
+                
+                <div class="role-selection-wrapper">
+                    <div class="role-toggle">
+                        <input type="radio" name="role" id="role-customer" value="customer" checked>
+                        <label for="role-customer">Customer</label>
+                        <input type="radio" name="role" id="role-admin" value="admin">
+                        <label for="role-admin">Admin</label>
+                        <div class="role-slider"></div>
+                    </div>
+                </div>
+                
+                <form class="login-form" id="loginForm" action="#" method="POST">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="hello@stackly.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        </div>
+                        <div class="error-message" id="emailError" style="color: #ff4d4f; font-size: 12px; margin-top: 5px; display: none;">Please enter a valid email address.</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="********" required minlength="8">
+                        </div>
+                        <div class="error-message" id="passwordError" style="color: #ff4d4f; font-size: 12px; margin-top: 5px; display: none;">Password must be at least 8 characters.</div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="404.html" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-login">Log In</button>
+                    
+                    <div class="social-login">
+                        <p>Or continue with</p>
+                        <div class="social-icons">
+                            <a href="404.html" class="social-btn"><i class="fa-brands fa-google" style="font-size: 20px; margin-right: 8px;"></i> Google</a>
+                            <a href="404.html" class="social-btn"><i class="fa-brands fa-apple" style="font-size: 20px; margin-right: 8px;"></i> Apple</a>
+                        </div>
+                    </div>
+                </form>
+                
+                <p class="signup-link">Don't have an account? <a href="signup.html">Create Account</a></p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="index.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        emailInput.addEventListener('input', function() {
+            if (this.value.length > 0 && (this.validity.typeMismatch || this.validity.patternMismatch)) {
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+            }
+        });
+
+        passwordInput.addEventListener('input', function() {
+            if (this.value.length > 0 && this.value.length < 8) {
+                passwordError.style.display = 'block';
+            } else {
+                passwordError.style.display = 'none';
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            
+            if (password.length < 8) {
+                passwordError.style.display = 'block';
+                return;
+            }
+            
+            let name = email.split('@')[0].split('.').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            
+            const role = document.querySelector('input[name="role"]:checked').value;
+            if (role === 'admin' && !name.toLowerCase().startsWith("dr.")) {
+                name = "Dr. " + name;
+            }
+            
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userName', name);
+            
+            if (role === 'admin') {
+                window.location.href = 'admin_dashboard.html';
+            } else {
+                window.location.href = 'customer_dashboard.html';
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
