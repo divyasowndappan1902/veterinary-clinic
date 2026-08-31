@@ -1832,3 +1832,13 @@ img, video, canvas, iframe {
 .client-content {
     padding-left: 15px !important;
 }
+
+/* Mobile login menu item */
+.mobile-login {
+    display: none;
+}
+@media (max-width: 991px) {
+    .mobile-login {
+        display: block !important;
+    }
+}
