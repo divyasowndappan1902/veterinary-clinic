@@ -161,7 +161,7 @@ img {
     background: none;
     border: none;
     font-size: 24px;
-    color: var(--primary-color);
+    color: var(--accent-color);
     cursor: pointer;
 }
 
@@ -1841,4 +1841,10 @@ img, video, canvas, iframe {
     .mobile-login {
         display: block !important;
     }
+}
+
+/* Disable background scrolling when mobile menu is open */
+html.no-scroll, body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
 }
