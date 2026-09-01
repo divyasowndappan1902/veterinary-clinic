@@ -105,6 +105,9 @@ body.dashboard-page {
     margin-left: var(--sidebar-width);
     display: flex;
     flex-direction: column;
+    min-height: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Topbar */
@@ -116,6 +119,7 @@ body.dashboard-page {
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+    flex-shrink: 0;
 }
 .topbar-search {
     display: flex;
@@ -153,6 +157,7 @@ body.dashboard-page {
     padding: 40px;
     flex: 1;
     overflow-y: auto;
+    min-height: 0;
 }
 .page-header {
     display: flex;
