@@ -711,7 +711,7 @@ button:active, .btn:active, .btn-primary:active, .btn-outline:active, .btn-login
     .topbar-logo { display: block; order: 1; }
     .topbar-logo img { height: 35px; }
     .topbar-user { display: none !important; }
-    .topbar-left { width: 100%; justify-content: space-between; }
+    .topbar-left { width: 100% !important; flex: 1 !important; justify-content: space-between !important; } .sidebar-toggle { margin-left: auto !important; }
 }
 
 @media (max-width: 767px) {
@@ -739,4 +739,22 @@ button:active, .btn:active, .btn-primary:active, .btn-outline:active, .btn-login
     .dash-topbar h2 { font-size: 18px !important; }
     .stat-card h3 { font-size: 20px !important; }
     .apt-body h3, .rx-details h3 { font-size: 18px !important; }
+}
+
+
+
+/* Mobile Header Theme Color Override */
+@media (max-width: 991px) {
+    .dash-topbar {
+        background-color: var(--dash-secondary) !important;
+        border-bottom: none !important;
+    }
+    
+    .sidebar-toggle {
+        color: #ffffff !important;
+    }
+    
+    .topbar-logo img {
+        filter: brightness(0) invert(1) !important;
+    }
 }

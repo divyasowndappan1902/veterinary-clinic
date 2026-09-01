@@ -40,15 +40,15 @@
     <main class="dash-main">
         <!-- Topbar -->
         <header class="dash-topbar">
-            <div class="topbar-left" style="display: flex; align-items: center; gap: 15px;">
-                <button id="sidebar-toggle" class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+            <div class="topbar-left" style="display: flex; align-items: center; width: 100%; flex: 1; justify-content: space-between;">
                 <a href="index.html" class="topbar-logo"><img src="images/logo_0045.webp" alt="Stackly Logo"></a>
-                <div class="topbar-search">
+                <div class="topbar-search" style="flex: 1; margin: 0 15px;">
                     <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="Search patients, doctors...">
+                    <input type="text" placeholder="Search records...">
                 </div>
+                <button id="sidebar-toggle" class="sidebar-toggle" style="margin-left: auto;"><i class="fa-solid fa-bars"></i></button>
             </div>
-                        <div class="topbar-user">
+            <div class="topbar-user">
                 <div style="display: flex; flex-direction: column; line-height: 1.2;">
                     <span id="dynamic-name">Dr. John Doe</span>
                     <span id="dynamic-email" style="font-size: 12px; color: var(--dash-muted); font-weight: 400;">admin@stacklyvet.com</span>
@@ -703,6 +703,11 @@
     </script>
 </body>
 </html>
+
+
+
+
+
 
 
 

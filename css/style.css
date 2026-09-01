@@ -1860,3 +1860,38 @@ html.no-scroll, body.no-scroll {
     height: 100vh !important;
 }
 
+
+/* Fix for password masking characters missing in Bricolage Grotesque */
+input[type="password"] { font-family: system-ui, -apple-system, sans-serif !important; letter-spacing: 2px; }
+
+/* FAQ Accordion Smooth Animation */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.accordion-item.active .accordion-body {
+    max-height: 500px; /* Arbitrary large max-height to allow content */
+    opacity: 1;
+    padding-bottom: 22px !important;
+}
+
+.accordion-header .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 123, 84, 0.05) !important;
+}
+
+.accordion-item.active .accordion-header {
+    border-bottom: 1px solid #eaeaea !important;
+}
